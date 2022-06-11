@@ -83,9 +83,9 @@ function Signup() {
 						<input
 							type="text"
 							placeholder="Place"
-							name="lastName"
+							name="place"
 							onChange={handleChange}
-							value={data.Place}
+							value={data.place}
 							required
 							className="input"
 						/>
