@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import './Signup.css'
 
 
 function Signup() {
@@ -11,9 +13,92 @@ function Signup() {
 		place: "",
 	});
 
-  return (
-	<div>Signup</div>
-  )
+	const [error, setError] = useState("");
+	const navigate = useNavigate();
+
+	const handleChange = ({ currentTarget: input }) => {
+		setData({ ...data, [input.name]: input.value });
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		try {
+			const url = "http://localhost:8080/api/users";
+			const { data: res } = await axios.post(url, data);
+			navigate("/login");
+			console.log(res.message);
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
+	};
+	
+
+	return (
+		<div className="signup_container">
+			<div className="signup_form_container">
+				<div className="left">
+					<h1 >Welcome Back</h1>
+					<Link to="/login">
+						<button type="button" className="white_btn">
+							LOGIN
+						</button>
+					</Link>
+				</div>
+				<div className="right">
+					<form className="form_container" onSubmit={handleSubmit}>
+						<h1>Create Account</h1>
+						<input
+							type="text"
+							placeholder="Name"
+							name="name"
+							onChange={handleChange}
+							value={data.firstName}
+							required
+							className="input"
+						/>
+						<input
+							type="email"
+							placeholder="Email"
+							name="email"
+							onChange={handleChange}
+							value={data.email}
+							required
+							className="input"
+						/>
+						<input
+							type="password"
+							placeholder="Password"
+							name="password"
+							onChange={handleChange}
+							value={data.password}
+							required
+							className="input"
+						/>
+						<input
+							type="text"
+							placeholder="Place"
+							name="lastName"
+							onChange={handleChange}
+							value={data.place}
+							required
+							className="input"
+						/>
+						
+						{error && <div className="error_msg">{error}</div>}
+						<button type="submit" className="red_btn">
+							SIGN UP
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	)
 }
 
 export default Signup
