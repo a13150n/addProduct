@@ -37,20 +37,20 @@ function Signup() {
 			}
 		}
 	};
-	
+
 
 	return (
 		<div className="signup_container">
 			<div className="signup_form_container">
-				<div className="left">
-					<h1 >Welcome Back</h1>
+				<div className="right">
+					<h1>Welcome Back</h1>
 					<Link to="/login">
 						<button type="button" className="white_btn">
 							LOGIN
 						</button>
 					</Link>
 				</div>
-				<div className="right">
+				<div className="left">
 					<form className="form_container" onSubmit={handleSubmit}>
 						<h1>Create Account</h1>
 						<input
@@ -85,14 +85,14 @@ function Signup() {
 							placeholder="Place"
 							name="lastName"
 							onChange={handleChange}
-							value={data.place}
+							value={data.Place}
 							required
 							className="input"
 						/>
 						
 						{error && <div className="error_msg">{error}</div>}
 						<button type="submit" className="red_btn">
-							SIGN UP
+							SIGN IN
 						</button>
 					</form>
 				</div>

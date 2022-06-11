@@ -1,13 +1,23 @@
-.signup_container {
+.h3{
+	font-family:'Courier New', Courier, monospace;
+	text-align: center;
+	color: white;
+}
+.h1{
+	font-family:'Courier New', Courier, monospace;
+	text-align: center;
+}
+.login_container {
 	width: 100%;
 	min-height: 100vh;
 	background-color: #f5f5f5;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	
 }
 
-.signup_form_container {
+.login_form_container {
 	width: 900px;
 	height: 500px;
 	display: flex;
@@ -22,35 +32,27 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #ffffff;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+	background-color: white;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
-.left h1 {
+.lleft h1 {
 	margin-top: 0;
-	color: rgb(0, 0, 0);
+	color: white;
 	font-size: 35px;
 	align-self: center;
-	font-family: 'Courier New', Courier, monospace;
 }
 
-.right {
+.lright {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: rgb(255, 0, 0);
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-.right h1 {
-	margin-top: 0;
-	color: rgb(255, 255, 255);
-	font-size: 35px;
-	align-self: center;
-	font-family: 'Courier New', Courier, monospace;
+	background-color: #ff0505;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 
 .form_container {
@@ -73,6 +75,7 @@
 	background-color: #edf5f3;
 	margin: 5px 0;
 	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .error_msg {
@@ -87,25 +90,29 @@
 }
 
 .white_btn,
-.green_btn {
+.red_btn {
 	border: none;
 	outline: none;
 	padding: 12px 0;
 	background-color: white;
-	border-radius: 20px;
+	border-radius: 10px;
 	width: 180px;
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
 }
 
-.green_btn {
+.red_btn {
 	background-color: #f80101;
 	color: white;
 	margin: 10px;
 }
 
-.banner_button:hover{
-    background-color: rgb(219, 0, 0);
-    color: rgb(0, 0, 0);
+.red_btn:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.white_btn:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
