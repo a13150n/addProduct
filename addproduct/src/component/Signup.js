@@ -44,7 +44,7 @@ function Signup() {
 			<div className="signup_form_container">
 				<div className="right">
 					<h1>Welcome Back</h1>
-					<Link to="/login">
+					<Link to="/">
 						<button type="button" className="white_btn">
 							LOGIN
 						</button>
