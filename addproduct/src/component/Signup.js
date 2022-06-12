@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import './Signup.css'
 
-
 function Signup() {
 	const [data, setData] = useState({
 		name: "",
@@ -25,7 +24,7 @@ function Signup() {
 		try {
 			const url = "http://localhost:8080/api/users";
 			const { data: res } = await axios.post(url, data);
-			navigate("/login");
+			navigate("/");
 			console.log(res.message);
 		} catch (error) {
 			if (
@@ -58,7 +57,7 @@ function Signup() {
 							placeholder="Name"
 							name="name"
 							onChange={handleChange}
-							value={data.firstName}
+							value={data.name}
 							required
 							className="input"
 						/>

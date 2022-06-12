@@ -1,0 +1,38 @@
+.di{
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(255, 255, 255);
+	
+	justify-content: center;
+}
+
+.de{
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(255, 255, 255);
+	
+	justify-content: center;
+}
+
+.des{
+
+	
+	display:ruby-text-container;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(255, 255, 255);
+	
+	justify-content: center;
+	
+}
+
+h1{
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	color: rgb(0, 0, 0);
+}
