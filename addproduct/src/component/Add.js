@@ -19,10 +19,10 @@ function Add() {
 	};
 
 	const handleSubmit = async (e) => {
-		console.log(datas.pname,datas.price,datas.quantity,datas.category);
+		console.log(datas.pname,datas.price,datas.category);
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/api/product";
+			const url = "http://localhost:8080/add";
 			const { datas:res } = await axios.post(url, datas);
 			navigate("/home");
 			console.log(res.message);
@@ -67,7 +67,7 @@ function Add() {
 							className="input"
 						/>
             	<input
-							type="number"
+							type="text"
 							placeholder="Price"
 							name="price"
 							onChange={handleChange}
@@ -76,15 +76,6 @@ function Add() {
 							className="input"
 						/>
 					
-          <input
-							type="number"
-							placeholder="Quantity"
-							name="quantity"
-							onChange={handleChange}
-							value={datas.quantity}
-							required
-							className="input"
-						/>
             	<input
 							type="text"
 							placeholder="Category"
@@ -98,9 +89,12 @@ function Add() {
 					
 						
 						{error && <div className="adderror_msg">{error}</div>}
+						
 						<button type="submit" className="addwhite_btn">
 							CREATE
 						</button>
+					
+						
 					</form>
           <div className="addright">
           <Link to="/home">

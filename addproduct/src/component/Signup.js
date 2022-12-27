@@ -9,7 +9,7 @@ function Signup() {
 		name: "",
 		email: "",
 		password: "",
-		place: "",
+		place: ""
 	});
 
 	const [error, setError] = useState("");
@@ -22,7 +22,7 @@ function Signup() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/api/users";
+			const url = "http://localhost:8080/signup";
 			const { data: res } = await axios.post(url, data);
 			navigate("/");
 			console.log(res.message);
